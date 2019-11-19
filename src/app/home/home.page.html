@@ -15,9 +15,11 @@
     <ion-label>Equipo</ion-label>
     <ion-input [(ngModel)]="pilotosEditando.equipo"></ion-input>
   </ion-item>
+  <ion-item>
   <ion-label>Nº Pilotos</ion-label>
     <ion-input [(ngModel)]="pilotosEditando.numeroPilotos"></ion-input>
   </ion-item>
+  <ion-item>
   <ion-label>Motor</ion-label>
     <ion-input [(ngModel)]="pilotosEditando.motor"></ion-input>
   </ion-item>
@@ -27,7 +29,7 @@
 
 <h1>LISTA DE PILOTOS</h1>
   <ion-list>
-    <ion-item *ngFor="let documentPilotos of arrayColeccionPilotos "(click)="selecPiloto(documentPilotos)">
+    <ion-item *ngFor="let documentPilotos of arrayColeccionPilotos "(click)="navigateToUser(documentPilotos)">
       <ion-grid>
         <ion-row>
           <h2>{{documentPilotos.data.nombre}}</h2>

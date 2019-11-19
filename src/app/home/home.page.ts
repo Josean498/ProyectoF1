@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from "@angular/router";
 import { FirestoreService } from '../firestore.service';
 import { Pilotos } from '../pilotos';
 
@@ -15,7 +16,7 @@ export class HomePage {
     data: {} as Pilotos
    }];
 
-  constructor(private firestoreService: FirestoreService) {
+  constructor(private firestoreService: FirestoreService, private router: Router) {
     // Crear una tarea vacía
     this.pilotosEditando = {} as Pilotos;
     this.obtenerListaPilotos();
@@ -70,6 +71,10 @@ export class HomePage {
       // Limpiar datos de pantalla
       this.pilotosEditando = {} as Pilotos;
     })
+  }
+
+  navigateToUser(pilotoSelec) {
+    this.router.navigate(["/user/" + pilotoSelec.id]);
   }
 
 }
