@@ -50,6 +50,8 @@ export class HomePage {
     this.idPilotoSelec = pilotoSelec.id;
     this.pilotosEditando.nombre = pilotoSelec.data.nombre;
     this.pilotosEditando.equipo = pilotoSelec.data.equipo;
+    this.pilotosEditando.numeroPilotos = pilotoSelec.data.numeroPilotos;
+    this.pilotosEditando.motor = pilotoSelec.data.motor;
   }
 
   clicBotonBorrar() {

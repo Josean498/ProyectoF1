@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Proyecto F1
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,6 +14,12 @@
   <ion-item>
     <ion-label>Equipo</ion-label>
     <ion-input [(ngModel)]="pilotosEditando.equipo"></ion-input>
+  </ion-item>
+  <ion-label>Nº Pilotos</ion-label>
+    <ion-input [(ngModel)]="pilotosEditando.numeroPilotos"></ion-input>
+  </ion-item>
+  <ion-label>Motor</ion-label>
+    <ion-input [(ngModel)]="pilotosEditando.motor"></ion-input>
   </ion-item>
   <ion-button (click)="clicBotonInsertar()">Añadir tarea</ion-button>
   <ion-button (click)="clicBotonBorrar()">Borrar piloto</ion-button>
@@ -28,6 +34,12 @@
         </ion-row>
         <ion-row>
           <p>{{documentPilotos.data.equipo}}</p>
+        </ion-row>
+        <ion-row>
+          <p>{{documentPilotos.data.numeroPilotos}}</p>
+        </ion-row>
+        <ion-row>
+          <p>{{documentPilotos.data.motor}}</p>
         </ion-row>
       </ion-grid>
     </ion-item>
