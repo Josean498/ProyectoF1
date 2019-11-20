@@ -10,6 +10,7 @@ import { Pilotos } from '../pilotos';
 })
 export class HomePage {
   pilotosEditando: Pilotos;
+  idPilotoSelec: string;
 
   arrayColeccionPilotos: any = [{
     id: "",
@@ -43,7 +44,7 @@ export class HomePage {
     });
   }
 
-  idPilotoSelec: string;
+  
 
   selecPiloto(pilotoSelec) {
     console.log("Piloto seleccionada: ");
@@ -53,24 +54,6 @@ export class HomePage {
     this.pilotosEditando.equipo = pilotoSelec.data.equipo;
     this.pilotosEditando.numeroPilotos = pilotoSelec.data.numeroPilotos;
     this.pilotosEditando.motor = pilotoSelec.data.motor;
-  }
-
-  clicBotonBorrar() {
-    this.firestoreService.borrar("pilotos", this.idPilotoSelec).then(() => {
-      // Actualizar la lista completa
-      this.obtenerListaPilotos();
-      // Limpiar datos de pantalla
-      this.pilotosEditando = {} as Pilotos;
-    })
-  }
-
-  clicBotonModificar() {
-    this.firestoreService.actualizar("pilotos", this.idPilotoSelec, this.pilotosEditando).then(() => {
-      // Actualizar la lista completa
-      this.obtenerListaPilotos();
-      // Limpiar datos de pantalla
-      this.pilotosEditando = {} as Pilotos;
-    })
   }
 
   navigateToUser(pilotoSelec) {

@@ -7,4 +7,26 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content> My ID is: {{ id }} </ion-content>
+<ion-content> 
+    <ion-item>
+        El ID del producto es : {{ id }}
+      </ion-item>
+      <ion-item>
+        <ion-label><strong>Nombre: </strong></ion-label>
+        <ion-input [(ngModel)]="document.data.nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label><strong>Equipo: </strong></ion-label>
+        <ion-input [(ngModel)]="document.data.equipo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label><strong>Nº Pilotos: </strong></ion-label>
+        <ion-input [(ngModel)]="document.data.numeroPilotos"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label><strong>Motor: </strong></ion-label>
+        <ion-input [(ngModel)]="document.data.motor"></ion-input>
+      </ion-item>
+  <ion-button (click)="clicBotonBorrar()">Borrar piloto</ion-button>
+  <ion-button (click)="clicBotonModificar()">Modificar tarea</ion-button>
+</ion-content>

@@ -16,6 +16,9 @@ export class UserPage implements OnInit {
     data: {} as Pilotos
   };
 
+  pilotosEditando: Pilotos;
+  idPilotoSelec: string;
+
   constructor(private activatedRoute: ActivatedRoute, private firestoreService: FirestoreService) { }
 
   ngOnInit() {
@@ -35,4 +38,18 @@ export class UserPage implements OnInit {
     });
   }
 
+  clicBotonBorrar() {
+    this.firestoreService.borrar("pilotos", this.idPilotoSelec).then(() => {
+      this.document.id = this.activatedRoute.snapshot.paramMap.get("id");
+      // Limpiar datos de pantalla
+      this.pilotosEditando = {} as Pilotos;
+    })
+  }
+
+  clicBotonModificar() {
+    this.firestoreService.actualizar("pilotos", this.idPilotoSelec, this.pilotosEditando).then(() => {
+      // Limpiar datos de pantalla
+      this.pilotosEditando = {} as Pilotos;
+    })
+  }
 }
