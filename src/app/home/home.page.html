@@ -17,13 +17,15 @@
         <ion-row>
           <p>{{documentPilotos.data.equipo}}</p>
         </ion-row>
+        <ion-row>
+          <p>{{documentPilotos.data.numeroPilotos}}</p>
+        </ion-row>
       </ion-grid>
     </ion-item>
   </ion-list>
-
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="navigateToUser('new')" color="danger">
       <ion-icon name="add"></ion-icon>
   </ion-fab-button>
-</ion-fab>
+  </ion-fab>
 </ion-content>

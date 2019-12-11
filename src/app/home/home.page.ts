@@ -36,7 +36,7 @@ export class HomePage {
   }
 
   selecPiloto(pilotoSelec) {
-    console.log("Piloto seleccionada: ");
+    console.log("Piloto seleccionado: ");
     console.log(pilotoSelec);
     this.idPilotoSelec = pilotoSelec.id;
     this.pilotosEditando.nombre = pilotoSelec.data.nombre;
