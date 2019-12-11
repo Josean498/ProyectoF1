@@ -15,7 +15,7 @@ export class HomePage {
   arrayColeccionPilotos: any = [{
     id: "",
     data: {} as Pilotos
-   }];
+  }];
 
   constructor(private firestoreService: FirestoreService, private router: Router) {
     // Crear una tarea vacía
@@ -34,17 +34,6 @@ export class HomePage {
       })
     });
   }
-
-  clicBotonInsertar() {
-    this.firestoreService.insertar("pilotos", this.pilotosEditando).then(() => {
-      console.log('Piloto añadido correctamente!');
-      this.pilotosEditando= {} as Pilotos;
-    }, (error) => {
-      console.error(error);
-    });
-  }
-
-  
 
   selecPiloto(pilotoSelec) {
     console.log("Piloto seleccionada: ");

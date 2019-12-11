@@ -1,10 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>user</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
+		<ion-title>User</ion-title>
+		<ion-buttons slot="start">
+			<ion-button *ngIf="id == 'new'" (click)="clicBotonInsertar()"><ion-icon name="arrow-round-back"></ion-icon></ion-button>
+			<ion-button *ngIf="id != 'new'" (click)="clicBotonModificar()"><ion-icon name="arrow-round-back"></ion-icon></ion-button>
+		</ion-buttons>
+		<ion-buttons slot="end">
+			<ion-button (click)="clicBotonBorrar()"><ion-icon name="trash"></ion-icon></ion-button>
+
+		</ion-buttons>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content> 
@@ -28,5 +33,5 @@
         <ion-input [(ngModel)]="document.data.motor"></ion-input>
       </ion-item>
   <ion-button (click)="clicBotonBorrar()">Borrar piloto</ion-button>
-  <ion-button (click)="clicBotonModificar()">Modificar tarea</ion-button>
+  <ion-button (click)="clicBotonModificar()">Guardar piloto</ion-button>
 </ion-content>

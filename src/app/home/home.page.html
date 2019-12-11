@@ -7,24 +7,6 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label>Nombre</ion-label>
-    <ion-input [(ngModel)]="pilotosEditando.nombre"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Equipo</ion-label>
-    <ion-input [(ngModel)]="pilotosEditando.equipo"></ion-input>
-  </ion-item>
-  <ion-item>
-  <ion-label>Nº Pilotos</ion-label>
-    <ion-input [(ngModel)]="pilotosEditando.numeroPilotos"></ion-input>
-  </ion-item>
-  <ion-item>
-  <ion-label>Motor</ion-label>
-    <ion-input [(ngModel)]="pilotosEditando.motor"></ion-input>
-  </ion-item>
-  <ion-button (click)="clicBotonInsertar()">Añadir tarea</ion-button>
-
 <h1>LISTA DE PILOTOS</h1>
   <ion-list>
     <ion-item *ngFor="let documentPilotos of arrayColeccionPilotos "(click)="navigateToUser(documentPilotos)">
@@ -35,13 +17,13 @@
         <ion-row>
           <p>{{documentPilotos.data.equipo}}</p>
         </ion-row>
-        <ion-row>
-          <p>{{documentPilotos.data.numeroPilotos}}</p>
-        </ion-row>
-        <ion-row>
-          <p>{{documentPilotos.data.motor}}</p>
-        </ion-row>
       </ion-grid>
     </ion-item>
   </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="navigateToUser('new')" color="danger">
+      <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 </ion-content>
