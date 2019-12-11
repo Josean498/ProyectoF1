@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
+    <ion-title align = "center">
       Proyecto F1
     </ion-title>
   </ion-toolbar>
@@ -12,13 +12,13 @@
     <ion-item *ngFor="let documentPilotos of arrayColeccionPilotos "(click)="navigateToUser(documentPilotos)">
       <ion-grid>
         <ion-row>
-          <h2>{{documentPilotos.data.nombre}}</h2>
+          <h2><ion-icon name="man"></ion-icon>{{documentPilotos.data.nombre}}</h2>
         </ion-row>
         <ion-row>
-          <p>{{documentPilotos.data.equipo}}</p>
+          <p><ion-icon name="car"></ion-icon>{{documentPilotos.data.equipo}}</p>
         </ion-row>
         <ion-row>
-          <p>{{documentPilotos.data.numeroPilotos}}</p>
+          <p><ion-icon name="arrow-forward"></ion-icon>{{documentPilotos.data.numeroPilotos}}</p>
         </ion-row>
       </ion-grid>
     </ion-item>
