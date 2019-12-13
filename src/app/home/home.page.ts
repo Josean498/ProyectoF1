@@ -45,8 +45,23 @@ export class HomePage {
     this.pilotosEditando.motor = pilotoSelec.data.motor;
   }
 
-  navigateToUser(pilotoSelec) {
-    this.router.navigate(["/user/" + pilotoSelec.id]);
+  navigateToUser(id) {
+    this.router.navigate(["/user/" + id]);
   }
 
+  navigateToInfo() {
+    this.router.navigate(["/info/"]);
+  }
+
+  navigateToEquipo() {
+    this.router.navigate(["/equipo/"]);
+  }
+
+  navigateToMotor() {
+    this.router.navigate(["/motor/"]);
+  }
+
+  navigateToAcerca() {
+    this.router.navigate(["/acerca/"]);
+  }
 }

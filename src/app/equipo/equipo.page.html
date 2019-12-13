@@ -1,33 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title align = "center">
-      Proyecto F1
-    </ion-title>
+    <ion-buttons slot="start">
+			<ion-back-button (click)="navigateToInicio()"></ion-back-button>
+		</ion-buttons>
+    <ion-title align = "center">Equipos F1</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-<h1>LISTA DE PILOTOS</h1>
-  <ion-list>
-    <ion-item *ngFor="let documentPilotos of arrayColeccionPilotos "(click)="navigateToUser(documentPilotos.id)">
-      <ion-grid>
-        <ion-row>
-          <h2><ion-icon name="man"></ion-icon>{{documentPilotos.data.nombre}}</h2>
-        </ion-row>
-        <ion-row>
-          <p><ion-icon name="car"></ion-icon>{{documentPilotos.data.equipo}}</p>
-        </ion-row>
-        <ion-row>
-          <p><ion-icon name="arrow-forward"></ion-icon>{{documentPilotos.data.numeroPilotos}}</p>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
-  </ion-list>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="navigateToUser('new')" color="danger">
-      <ion-icon name="add"></ion-icon>
-  </ion-fab-button>
-  </ion-fab>
+<ion-content>
+  <h1>ESTÁ ES MI CUARTA PÁGINA, AQUI VA A IR LA INFORMACION DE TODOS LOS EQUIPOS CON FOTOS, ETC...</h1>
+  <br>
+  <br>
+  <ion-img width="80" height="80" src="https://www.mundodeportivo.com/r/GODO/MD/p3/Motor/Imagenes/2015/12/24/img_fmorales_20151224-115954_imagenes_md_otras_fuentes_formula1-pasta.jpg"></ion-img>
+
 </ion-content>
 
 <ion-footer id="pie">

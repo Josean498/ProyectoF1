@@ -95,6 +95,7 @@ export class UserPage implements OnInit {
 						handler: () => {
 							console.log('Confirm Okay');
 							this.clicBotonInsertar();
+							this.navigateToInicio();
 						}
 					}
 				]
@@ -129,6 +130,7 @@ export class UserPage implements OnInit {
 						handler: () => {
 							console.log('Confirm Okay');
 							this.clicBotonModificar();
+							this.navigateToInicio();
 						}
 					}
 				]
@@ -162,6 +164,7 @@ export class UserPage implements OnInit {
 						handler: () => {
 							console.log('Confirm Okay');
 							this.clicBotonBorrar();
+							this.navigateToInicio();
 						}
 					}
 				]
