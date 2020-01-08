@@ -1,5 +1,7 @@
 {
   "name": "proyrctof1",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

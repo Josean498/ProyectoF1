@@ -2,7 +2,7 @@ ion-toolbar{
     --ion-background-color:rgb(230, 15, 15);
     color: rgb(255, 255, 255);
 }
-@media (orientation: landscape) {
+@media (orientation: portrait) {
     #pie {
         height: 0;
         visibility: collapse;
