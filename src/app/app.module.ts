@@ -15,8 +15,7 @@ import { environment } from '../environments/environment';
 
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { SocialSharing } from '@ionic-native/social-sharing';
-
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

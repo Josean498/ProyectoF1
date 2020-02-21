@@ -3,4 +3,5 @@ export interface Pilotos {
     equipo: string;
     numeroPilotos: number;
     motor: string;
+    foto: string;
 }
