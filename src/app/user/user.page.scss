@@ -2,3 +2,18 @@ ion-toolbar{
     --ion-background-color:rgb(230, 15, 15);
     color: rgb(255, 255, 255);
 }
+
+@media (orientation: landscape) {
+    #pie {
+        justify-content: center;
+        // visibility: collapse;
+    }
+}
+
+@media (orientation: portrait) {
+    .texto-boton {
+        display: block;
+        text-indent: -9999em;
+        text-transform: uppercase;
+    }
+}

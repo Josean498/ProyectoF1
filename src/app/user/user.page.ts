@@ -5,6 +5,7 @@ import { FirestoreService } from '../firestore.service';
 import { AlertController } from '@ionic/angular';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 @Component({
     selector: 'app-user',
@@ -21,13 +22,15 @@ export class UserPage implements OnInit {
 	id=null;
 	pilotosEditando: Pilotos;
 
-constructor(private activatedRoute: ActivatedRoute, 
-    private firestoreService: FirestoreService,
-    private router: Router,
-	public alertController: AlertController,
-	private loadingController: LoadingController,
-    private toastController: ToastController,
-    private imagePicker: ImagePicker) {
+	constructor(private activatedRoute: ActivatedRoute, 
+		private firestoreService: FirestoreService,
+		private router: Router,
+		public alertController: AlertController,
+		private loadingController: LoadingController,
+		private toastController: ToastController,
+		private imagePicker: ImagePicker,
+		private socialSharing: SocialSharing,
+	) {
 	this.pilotosEditando = {} as Pilotos;
 	this.id = this.activatedRoute.snapshot.paramMap.get("id");
 	this.firestoreService.consultarPorId("pilotos", this.id).subscribe((resultado) => {
@@ -246,4 +249,46 @@ constructor(private activatedRoute: ActivatedRoute,
 				console.log(err);
 				});
 			}  
+
+			compilemsg():string{
+				let fechaHora = new Date(this.document.data.fechaHora);
+				let horaInicial = new Date(fechaHora.getTime());
+				let horaFinal = new Date(fechaHora.getTime() + this.document.data.duracion*60000);
+				let fechaStr =  fechaHora.toLocaleDateString("es-ES");
+				let horaIncialStr = horaInicial.toLocaleTimeString("es-ES",{hour: '2-digit', minute: '2-digit'});
+				let horaFinalStr = horaFinal.toLocaleTimeString("es-ES",{hour: '2-digit', minute: '2-digit'});
+
+				var msg = 'Evento: ' + this.document.data.nombre + ' por ' + this.document.data.ponente + '\n'
+				+ 'En el día ' + fechaStr  + ' a las ' + horaIncialStr + ' hasta las ' + horaFinalStr + ' en ' + this.document.data.direccion;
+
+				return msg;
+}
+			facebookShare(){
+				var msg  = this.compilemsg();
+				this.socialSharing.shareViaFacebook(msg, null, null);
+			}
+
+			regularShare(){
+		
+				let msg = this.compilemsg();
+				// console.log(msg);
+		
+				this.socialSharing.share(msg, null, null, null);
+			}
+		
+			twitterShare(){
+				
+				let msg = this.compilemsg();
+				// console.log(msg);
+		
+				this.socialSharing.shareViaTwitter(msg, null, null);
+			}
+		
+			whatsappShare(){
+				
+				let msg = this.compilemsg();
+				// console.log(msg);
+		
+				this.socialSharing.shareViaWhatsApp(msg, null, null);
+			}
 }

@@ -21,7 +21,7 @@ export class MapaPage {
   }
   // The below function is added
   loadMap() {
-    this.map = new Map("mapId").setView([36.87818193043229, -5.672634085363764 ], 15);
+    this.map = new Map("IdMapa").setView([36.87818193043229, -5.672634085363764 ], 12);
     tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       { attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY- SA</a>' })
       .addTo(this.map); 
@@ -29,9 +29,9 @@ export class MapaPage {
       this.newMarker = marker([36.87818193043229, -5.672634085363764 ], {draggable: 
         true}).addTo(this.map);
   }
-  goBack() {
-    this.router.navigate(["home"]);
-  }
+  // goBack() {
+  //   this.router.navigate(["home"]);
+  // }
   navigateToInfo() {
     this.router.navigate(["/info/"]);
   }
@@ -47,4 +47,7 @@ export class MapaPage {
   navigateToAcerca() {
     this.router.navigate(["/acerca/"]);
   }
+  navigateToInicio() {
+		this.router.navigate(["/"]);
+	}
 }
