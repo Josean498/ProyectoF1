@@ -64,4 +64,7 @@ export class HomePage {
   navigateToAcerca() {
     this.router.navigate(["/acerca/"]);
   }
+  navigateToMapa() {
+    this.router.navigate(["/mapa/"]);
+  }
 }

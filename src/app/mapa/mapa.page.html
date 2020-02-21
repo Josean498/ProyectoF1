@@ -1,0 +1,41 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Mapa</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div id="mapId" style="height:350px"></div>
+	<ion-item style="cursor: pointer">
+	</ion-item>
+	<ion-item>
+
+	<ion-label position="stacked">Villamartin, Cádiz Tajo 35 (11650)</ion-label>
+
+	</ion-item>
+
+  </ion-content>
+  <ion-footer id="pie">
+    <ion-toolbar>
+      <ion-buttons>
+        <ion-button (click)="navigateToInfo()" class="button-footer">
+          <ion-icon name="man"></ion-icon>
+          <label class="texto-boton">Parrilla F1</label>
+        </ion-button>
+        <ion-button (click)="navigateToEquipo()" class="button-footer">
+          <ion-icon name="car"></ion-icon>
+          <label class="texto-boton">Equipos</label>
+        </ion-button>
+        <ion-button (click)="navigateToMotor()" class="button-footer">
+          <label class="texto-boton">Motorización</label>
+        </ion-button>
+        <ion-button (click)="navigateToAcerca()" class="button-footer">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <label class="texto-boton">Acerca de</label>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>

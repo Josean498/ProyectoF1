@@ -32,7 +32,7 @@
 
 <ion-footer id="pie">
   <ion-toolbar>
-    <ion-buttons>
+    <ion-buttons class="ion-content-center">
       <ion-button (click)="navigateToInfo()" class="button-footer">
         <ion-icon name="man"></ion-icon>
         <label class="texto-boton">Parrilla F1</label>
@@ -42,11 +42,16 @@
         <label class="texto-boton">Equipos</label>
       </ion-button>
       <ion-button (click)="navigateToMotor()" class="button-footer">
+        <ion-icon name="construct"></ion-icon>
         <label class="texto-boton">Motorización</label>
       </ion-button>
       <ion-button (click)="navigateToAcerca()" class="button-footer">
         <ion-icon name="information-circle-outline"></ion-icon>
-        <label class="texto-boton">Acerda de</label>
+        <label class="texto-boton">Acerca de</label>
+      </ion-button>
+      <ion-button (click)="navigateToMapa()" class="button-footer">
+        <ion-icon name="map"></ion-icon>
+        <label class="texto-boton">Mapa</label>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
