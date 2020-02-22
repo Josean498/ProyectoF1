@@ -262,7 +262,8 @@ export class UserPage implements OnInit {
 				+ 'En el día ' + fechaStr  + ' a las ' + horaIncialStr + ' hasta las ' + horaFinalStr + ' en ' + this.document.data.direccion;
 
 				return msg;
-}
+			}
+			
 			facebookShare(){
 				var msg  = this.compilemsg();
 				this.socialSharing.shareViaFacebook(msg, null, null);
