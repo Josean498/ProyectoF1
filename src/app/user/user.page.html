@@ -1,12 +1,19 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-			<ion-back-button (click)="navigateToInicio()"></ion-back-button>
-		</ion-buttons>
+      <ion-back-button (click)="navigateToInicio()"></ion-back-button>
+      <ion-button *ngIf="userUID === ''"></ion-button>
+			<ion-button *ngIf="id == 'new' && userUID !== ''" (click)="presentAlertConfirmInsertar()"><ion-icon name="arrow-round-back"></ion-icon></ion-button>
+			<ion-button *ngIf="id != 'new' && userUID !== ''" (click)="presentAlertConfirmModificar()"><ion-icon name="arrow-round-back"></ion-icon></ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button *ngIf="userUID !== ''" (click)="presentAlertConfirmBorrar()"><ion-icon name="trash"></ion-icon></ion-button>
+    </ion-buttons>
 		<ion-title align = "center">
       Detalle piloto
     </ion-title>
-    
+  
   </ion-toolbar>
 </ion-header>
 <ion-content> 
@@ -15,19 +22,19 @@
       </ion-item>
       <ion-item>
         <ion-label><strong>Nombre: </strong></ion-label>
-        <ion-input [(ngModel)]="document.data.nombre"></ion-input>
+        <ion-input [disabled]="userUID === ''" required [(ngModel)]="document.data.nombre"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label><strong>Equipo: </strong></ion-label>
-        <ion-input [(ngModel)]="document.data.equipo"></ion-input>
+        <ion-input [disabled]="userUID === ''" required  [(ngModel)]="document.data.equipo"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label><strong>Nº Pilotos: </strong></ion-label>
-        <ion-input [(ngModel)]="document.data.numeroPilotos"></ion-input>
+        <ion-input [disabled]="userUID === ''" required  [(ngModel)]="document.data.numeroPilotos"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label><strong>Motor: </strong></ion-label>
-        <ion-input [(ngModel)]="document.data.motor"></ion-input>
+        <ion-input [disabled]="userUID === ''" required [(ngModel)]="document.data.motor"></ion-input>
       </ion-item>
       <br>
       <div>

@@ -6,6 +6,8 @@ import { AlertController } from '@ionic/angular';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { AuthService } from '../services/auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
     selector: 'app-user',
@@ -19,8 +21,12 @@ export class UserPage implements OnInit {
 	data: {} as Pilotos
 	}
 
-	id=null;
+	id = null;
 	pilotosEditando: Pilotos;
+
+	userEmail: String = "";
+	userUID: String = "";
+	isLogged: boolean;
 
 	constructor(private activatedRoute: ActivatedRoute, 
 		private firestoreService: FirestoreService,
@@ -30,6 +36,8 @@ export class UserPage implements OnInit {
 		private toastController: ToastController,
 		private imagePicker: ImagePicker,
 		private socialSharing: SocialSharing,
+		private authService: AuthService,
+		public afAuth: AngularFireAuth
 	) {
 	this.pilotosEditando = {} as Pilotos;
 	this.id = this.activatedRoute.snapshot.paramMap.get("id");
@@ -46,6 +54,17 @@ export class UserPage implements OnInit {
 	}
 
 	ngOnInit() {
+	}
+
+	ionViewDidEnter() {
+		this.isLogged = false;
+		this.afAuth.user.subscribe(user => {
+		if(user){
+			this.userEmail = user.email;
+			this.userUID = user.uid;
+			this.isLogged = true;
+		}
+		})
 	}
 
 	clicBotonBorrar() {

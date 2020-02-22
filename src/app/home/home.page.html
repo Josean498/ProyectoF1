@@ -3,10 +3,15 @@
     <ion-title align = "center">
       Proyecto F1
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button title="Cerrar sesión" *ngIf="userUID !== ''" (click)="logout()"><ion-icon name="log-out"></ion-icon></ion-button>
+      <ion-button title="Iniciar Sesión" *ngIf="userUID == ''" (click)="navigateToLogin()"><ion-icon name="log-in"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+<p hidden>{{ userUID }}</p>
 <h1>LISTA DE PILOTOS</h1>
   <ion-list>
     <ion-item *ngFor="let documentPilotos of arrayColeccionPilotos "(click)="navigateToUser(documentPilotos.id)">
@@ -26,7 +31,7 @@
       </ion-grid>
     </ion-item>
   </ion-list>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab  *ngIf="userUID !== ''" vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="navigateToUser('new')" color="danger">
       <ion-icon name="add"></ion-icon>
   </ion-fab-button>
