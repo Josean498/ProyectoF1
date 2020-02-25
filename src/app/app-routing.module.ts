@@ -11,7 +11,6 @@ const routes: Routes = [
   { path: 'acerca', loadChildren: './acerca/acerca.module#AcercaPageModule' },
   { path: 'mapa', loadChildren: './mapa/mapa.module#MapaPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
 ];
 
 @NgModule({

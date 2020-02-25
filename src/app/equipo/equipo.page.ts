@@ -29,6 +29,10 @@ export class EquipoPage implements OnInit {
     this.router.navigate(["/acerca/"]);
   }
 
+  navigateToMapa() {
+    this.router.navigate(["/mapa/"]);
+  }
+
   navigateToInicio() {
 		this.router.navigate(["/"]);
 	}

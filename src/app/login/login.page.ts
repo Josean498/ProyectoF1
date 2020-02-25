@@ -15,15 +15,15 @@ export class LoginPage {
   errorMessage: string = '';
 
   validation_messages = {
-    'email': [
-      { type: 'required', message: 'Email is required.' },
-      { type: 'pattern', message: 'Please enter a valid email.' }
-    ],
-    'password': [
-      { type: 'required', message: 'Password is required.' },
-      { type: 'minlength', message: 'Password must be at least 5 characters long.' }
-    ]
-  };
+   'email': [
+     { type: 'required', message: 'Email is required.' },
+     { type: 'pattern', message: 'Please enter a valid email.' }
+   ],
+   'password': [
+     { type: 'required', message: 'Password is required.' },
+     { type: 'minlength', message: 'Password must be at least 5 characters long.' }
+   ]
+ };
 
   constructor(
     private authService: AuthService,
@@ -56,5 +56,9 @@ export class LoginPage {
 
   goRegisterPage(){
     this.router.navigate(["/register"]);
+  }
+
+  navigateToInicio() {
+    this.router.navigate(["/"]);
   }
 }

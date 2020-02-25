@@ -85,7 +85,7 @@ export class HomePage {
   }
 
   navigateToUser(id) {
-    this.router.navigate(["/user/" + id]);
+			this.router.navigate(["/user/" + id]);
   }
 
   navigateToInfo() {
@@ -105,5 +105,8 @@ export class HomePage {
   }
   navigateToMapa() {
     this.router.navigate(["/mapa/"]);
+  }
+  navigateToLogin() {
+    this.router.navigate(["/login/"]);
   }
 }

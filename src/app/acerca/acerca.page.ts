@@ -35,7 +35,10 @@ export class AcercaPage implements OnInit {
   navigateToAcerca() {
     this.router.navigate(["/acerca/"]);
   }
-
+  navigateToMapa() {
+    this.router.navigate(["/mapa/"]);
+  }
+  
   navigateToInicio() {
 		this.router.navigate(["/"]);
 	}
