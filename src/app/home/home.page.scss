@@ -3,6 +3,10 @@ ion-toolbar {
     color: rgb(255, 255, 255);
 }
 
+.button-footer {
+    margin: auto;
+} 
+
 @media (orientation: landscape) {
     #pie {
         justify-content: center;
@@ -12,7 +16,6 @@ ion-toolbar {
 
 @media (orientation: portrait) {
     .texto-boton {
-        display: block;
         font-size: 0;       
         text-transform: uppercase;
     }

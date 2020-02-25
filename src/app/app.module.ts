@@ -20,6 +20,7 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
