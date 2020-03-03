@@ -7,6 +7,15 @@ ion-toolbar {
     margin: auto;
 } 
 
+.lista {
+    text-align: center;
+}
+
+img {
+    float: right; 
+    margin: 0px 0px 0px 0px;
+}
+
 @media (orientation: landscape) {
     #pie {
         justify-content: center;

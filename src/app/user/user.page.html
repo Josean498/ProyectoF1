@@ -3,12 +3,9 @@
     <ion-buttons slot="start">
       <ion-back-button (click)="navigateToInicio()"></ion-back-button>
       <ion-button *ngIf="userUID === ''"></ion-button>
-			<ion-button *ngIf="id == 'new' && userUID !== ''" (click)="presentAlertConfirmInsertar()"><ion-icon name="arrow-round-back"></ion-icon></ion-button>
-			<ion-button *ngIf="id != 'new' && userUID !== ''" (click)="presentAlertConfirmModificar()"><ion-icon name="arrow-round-back"></ion-icon></ion-button>
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button *ngIf="userUID !== ''" (click)="presentAlertConfirmBorrar()"><ion-icon name="trash"></ion-icon></ion-button>
     </ion-buttons>
 		<ion-title align = "center">
       Detalle piloto
@@ -17,9 +14,9 @@
   </ion-toolbar>
 </ion-header>
 <ion-content> 
-    <ion-item>
+    <!-- <ion-item>
         El ID del piloto es : {{ id }}
-      </ion-item>
+      </ion-item> -->
       <ion-item>
         <ion-label><strong>Nombre: </strong></ion-label>
         <ion-input [disabled]="userUID === ''" required [(ngModel)]="document.data.nombre"></ion-input>
@@ -39,16 +36,16 @@
       <br>
       <div>
       <ion-buttons>
-        <ion-button *ngIf="id == 'new'" (click)="presentAlertConfirmInsertar()"><ion-icon name="save" size = "large"></ion-icon></ion-button>
+        <ion-button *ngIf="id == 'new' && userUID !== ''" (click)="presentAlertConfirmInsertar()"><ion-icon name="save" size = "large"></ion-icon></ion-button>
       </ion-buttons>
       <ion-buttons>
-        <ion-button *ngIf="id != 'new'" (click)="presentAlertConfirmModificar()"><ion-icon name="save" size = "large"></ion-icon></ion-button>
+        <ion-button *ngIf="id != 'new' && userUID !== ''" (click)="presentAlertConfirmModificar()"><ion-icon name="save" size = "large"></ion-icon></ion-button>
       </ion-buttons>
       <ion-buttons>
         <ion-button (click)="presentAlertConfirmBorrar()"><ion-icon name="trash" size = "large"></ion-icon></ion-button>
       </ion-buttons>
       <ion-buttons>
-        <ion-button (click)="uploadImagePicker()"><ion-icon name="add" size = "large"></ion-icon></ion-button>
+        <ion-button *ngIf="userUID !== ''" (click)="uploadImagePicker()"><ion-icon name="add" size = "large"></ion-icon></ion-button>
       </ion-buttons>
     </div>
     <div>
