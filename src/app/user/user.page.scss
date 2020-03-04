@@ -5,15 +5,13 @@ ion-toolbar{
 
 @media (orientation: landscape) {
     #pie {
-        justify-content: center;
-        // visibility: collapse;
+        text-align: center;
     }
 }
 
 @media (orientation: portrait) {
     .texto-boton {
-        display: block;
-        text-indent: -9999em;
+        font-size: 0;       
         text-transform: uppercase;
     }
 }

@@ -270,15 +270,9 @@ export class UserPage implements OnInit {
 			}  
 
 			compilemsg():string{
-				let fechaHora = new Date(this.document.data.fechaHora);
-				let horaInicial = new Date(fechaHora.getTime());
-				let horaFinal = new Date(fechaHora.getTime() + this.document.data.duracion*60000);
-				let fechaStr =  fechaHora.toLocaleDateString("es-ES");
-				let horaIncialStr = horaInicial.toLocaleTimeString("es-ES",{hour: '2-digit', minute: '2-digit'});
-				let horaFinalStr = horaFinal.toLocaleTimeString("es-ES",{hour: '2-digit', minute: '2-digit'});
+				
 
-				var msg = 'Evento: ' + this.document.data.nombre + ' por ' + this.document.data.ponente + '\n'
-				+ 'En el día ' + fechaStr  + ' a las ' + horaIncialStr + ' hasta las ' + horaFinalStr + ' en ' + this.document.data.direccion;
+				var msg = "Vas a compartir la información de" + this.document.data.nombre + "de fórmula 1";
 
 				return msg;
 			}
